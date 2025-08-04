@@ -1,5 +1,4 @@
 import React from "react";
-import {Form} from "react-router-dom";
 
 export const ContactForm = ({
   name,
@@ -12,7 +11,7 @@ export const ContactForm = ({
 }) => {
 
   return (
-      <Form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
           <label htmlFor="phone">Phone</label>
@@ -20,7 +19,7 @@ export const ContactForm = ({
           <label htmlFor="email">Email</label>
           <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
           <button type="submit">Add Contact</button>
-      </Form>
+      </form>
   );
 };
 
