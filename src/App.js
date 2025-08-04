@@ -7,8 +7,7 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
      const [contactList, setContactList] = useState([]);
      const saveContact = (obj) => {
-         /*
-         setContactList([...contactList, obj]);
+         /* better than setContactList([...contactList, obj]); because it uses the previous state and it avoids potential issues with stale state.
          */
          setContactList(prev => [...prev, obj]);
      }
