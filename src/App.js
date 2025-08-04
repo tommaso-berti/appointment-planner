@@ -7,11 +7,14 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
      const [contactList, setContactList] = useState([]);
      const saveContact = (obj) => {
+         /*
          setContactList([...contactList, obj]);
+         */
+         setContactList(prev => [...prev, obj]);
      }
      const [appointmentList, setAppointmentList] = useState([]);
      const saveAppointment = (obj) => {
-        setAppointmentList([...appointmentList, obj]);
+        setAppointmentList(prev => [...prev, obj]);
      }
         // Log the contactList to the console whenever it changes
      useEffect(() => {
