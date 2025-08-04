@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
+import {Tile} from "../../components/tile/Tile";
 
 export const ContactsPage = ({contactList, saveContact}) => {
   /*
@@ -25,6 +25,12 @@ export const ContactsPage = ({contactList, saveContact}) => {
               setPhone("");
               setEmail("");
           }
+          else {
+                alert("Contact with this name already exists.");
+          }
+      }
+      else {
+            alert("Please fill in all fields.");
       }
   };
 
@@ -43,6 +49,7 @@ export const ContactsPage = ({contactList, saveContact}) => {
       <section>
         <h2>Contacts</h2>
       </section>
+        <TileList list={contactList}/>
     </div>
   );
 };
